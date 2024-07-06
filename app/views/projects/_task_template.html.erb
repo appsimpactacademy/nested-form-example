@@ -1,0 +1,24 @@
+<template id="task_template">
+  <div class="nested-fields mb-3 border p-3 rounded">
+    <%= hidden_field_tag 'project[tasks_attributes][NEW_RECORD][_destroy]', nil, class: 'hidden-destroy' %>
+    
+    <div class="mb-3">
+      <%= label_tag 'project[tasks_attributes][NEW_RECORD][task_type_id]', "Task Type", class: 'form-label' %>
+      <%= select_tag 'project[tasks_attributes][NEW_RECORD][task_type_id]', options_from_collection_for_select(TaskType.all, :id, :name), prompt: "Select Task Type", class: 'form-control task-type-select' %>
+    </div>
+    
+    <div class="mb-3">
+      <%= label_tag 'project[tasks_attributes][NEW_RECORD][name]', 'Name', class: 'form-label' %>
+      <%= text_field_tag 'project[tasks_attributes][NEW_RECORD][name]', nil, class: 'form-control' %>
+    </div>
+    
+    <div class="mb-3">
+      <%= label_tag 'project[tasks_attributes][NEW_RECORD][description]', 'Description', class: 'form-label' %>
+      <%= text_area_tag 'project[tasks_attributes][NEW_RECORD][description]', nil, class: 'form-control' %>
+    </div>
+    
+    <div class="d-flex justify-content-between">
+      <%= link_to 'Remove Task', '#', class: 'btn btn-danger btn-sm', data: { action: 'click->tasks#removeTask' } %>
+    </div>
+  </div>
+</template>
