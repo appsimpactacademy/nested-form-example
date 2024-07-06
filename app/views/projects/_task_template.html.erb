@@ -4,7 +4,7 @@
     
     <div class="mb-3">
       <%= label_tag 'project[tasks_attributes][NEW_RECORD][task_type_id]', "Task Type", class: 'form-label' %>
-      <%= select_tag 'project[tasks_attributes][NEW_RECORD][task_type_id]', options_from_collection_for_select(TaskType.all, :id, :name), prompt: "Select Task Type", class: 'form-control task-type-select' %>
+      <%= select_tag 'project[tasks_attributes][NEW_RECORD][task_type_id]', options_from_collection_for_select(TaskType.all, :id, :name), prompt: "Select Task Type", class: 'form-control task-type-select', data: { tasks_target: 'taskTypeSelect' } %>
     </div>
     
     <div class="mb-3">

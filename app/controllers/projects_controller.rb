@@ -46,6 +46,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:name, :description, tasks_attributes: [:id, :name, :description, :_destroy])
+    params.require(:project).permit(:name, :description, tasks_attributes: [:id, :name, :description, :_destroy, :task_type_id])
   end
 end

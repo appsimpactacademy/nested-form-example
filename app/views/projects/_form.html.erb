@@ -20,7 +20,7 @@
     <%= form.text_area :description, class: 'form-control' %>
   </div>
 
-  <div data-controller="tasks" data-tasks-target="container">
+  <div data-controller="tasks">
     <h3>Tasks</h3>
     <div id="tasks-list">
       <%= form.fields_for :tasks do |task_form| %>
@@ -29,7 +29,8 @@
         </div>
       <% end %>
     </div>
-    <div style="width: 90%;text-align: end;margin-top: -53px;">
+
+    <div class="d-flex justify-content-end mt-3">
       <%= link_to 'Add Task', '#', class: 'btn btn-primary', data: { action: 'click->tasks#addTask' } %>
     </div>
   </div>
